@@ -1,4 +1,4 @@
-package org.example;
+package org.twitter.producer;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
@@ -30,7 +30,7 @@ public class TwitterProducer {
     String token = "";
     String secret = "";
 
-    List<String> terms = Lists.newArrayList("");
+    List<String> terms = Lists.newArrayList("Scala", "Java");
 
 
     public TwitterProducer(){}

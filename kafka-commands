@@ -1,0 +1,18 @@
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+bin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 
+bin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --list
+bin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --describe
+bin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic second_topic --delete
+Producer
+bin/kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic
+bin/kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic --producer-property acks=all
+Consumer
+bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic
+bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning
+bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group first-app-group
+bin/kafka-consumer-groups.sh --bootstrap-server 127.0.0.1:9092 --describe --group first-app-group
+bin/kafka-consumer-groups.sh  --list --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --group first-app-group  --reset-offsets --to-earliest --execute --topic first_topic
+ 
+

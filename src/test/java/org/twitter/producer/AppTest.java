@@ -1,4 +1,4 @@
-package org.example;
+package org.twitter.producer;
 
 import static org.junit.Assert.assertTrue;
 
