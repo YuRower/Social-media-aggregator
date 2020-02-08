@@ -1,0 +1,61 @@
+{
+  "name": "newsfeed",
+  "version": "0.0.0",
+  "server": false,
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && NODE_ENV=production webpack && gulp prod",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.19.0",
+    "cheerio": "latest",
+    "cookie-parser": "latest",
+    "debug": "latest",
+    "dotenv": "latest",
+    "file-loader": "latest",
+    "firebase": "latest",
+    "moment": "^2.24.0",
+    "react": "latest",
+    "react-bootstrap": "latest",
+    "react-dom": "latest",
+    "react-dropzone": "latest",
+    "react-redux": "latest",
+    "react-time": "latest",
+    "redux": "latest",
+    "redux-thunk": "latest",
+    "stripe": "latest",
+    "superagent": "^3.5.2",
+    "turbo360": "^1.8.68",
+    "webpack": "latest"
+  },
+  "devDependencies": {
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-react": "latest",
+    "chai": "latest",
+    "chai-http": "latest",
+    "gulp": "latest",
+    "gulp-6to5": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-less": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-rename": "latest",
+    "gulp-uglify": "latest",
+    "json-loader": "latest",
+    "mocha": "latest",
+    "mocha-jscs": "latest",
+    "mocha-jshint": "latest",
+    "nodemon": "^2.0.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "deploy": [
+    "index.html",
+    "dist"
+  ],
+  "app": "5e3ee422d0a25e001545e296"
+}
